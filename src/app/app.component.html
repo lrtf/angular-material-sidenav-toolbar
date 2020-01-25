@@ -1,0 +1,49 @@
+<mat-sidenav-container fullscreen>
+  <!-- <mat-sidenav mode="side" #sidenav [opened]="opened" position="start" fixedInViewport="true"> -->
+    <mat-sidenav mode="side"  opened fixedInViewport="true" class="sidenav-content" [class.menu-open]="opened" [class.menu-close]="!opened">
+    <mat-toolbar class="sidenav-toolbar">
+
+      <a mat-list-item [routerLink]="['/']" routerLinkActive="active">
+        <mat-icon>sports_football</mat-icon>
+        E-esport
+      </a>
+
+
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <mat-list-item *ngFor="let item of navListItens">
+        <a [routerLink]="item.link" routerLinkActive="active" (click)="handleClick(item)" matLine>
+          <mat-icon>{{item.icon}}</mat-icon>
+         <span class="navigation-item-label">{{ item.item }}</span> 
+        </a>
+      </mat-list-item>
+
+      <mat-list-item >
+        <a [routerLink]="['/']" routerLinkActive="active" matLine>
+          <mat-icon>exit_to_app</mat-icon>
+          Sair</a>
+      </mat-list-item>
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!--CONTENT-->
+  <mat-sidenav-content [ngStyle]="{ 'margin-left.px': contentMargin }">
+    <mat-toolbar color="primary" class="mat-elevation-z2 content-toolbar">
+      <button mat-icon-button (click)="toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      {{ selected }}
+    </mat-toolbar>
+    <div class="main-content">
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.</p>
+    </div>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.sidenav-toolbar {
+  background-color: #1a237e;
+  a {
+      color: white;
+      text-decoration: none;
+  }
+}
+.mat-icon {
+  vertical-align: middle;
+  margin-right: 20px;
+}
+.main-content {
+  padding: 20px;
+  margin-top: 58px;
+}
+.sidenav-content.menu-open{
+  width: 260px;
+}
+
+.sidenav-content.menu-close{
+  width: 60px;
+  .navigation-item-label {
+      display: none !important;
+    }
+}
+
+.content-toolbar{
+  position: fixed;
+}
+
+ .mat-drawer-inner-container {
+  overflow-x: hidden !important;
+}
